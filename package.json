@@ -1,7 +1,14 @@
 {
   "private": true,
-  "name": "@theia/monorepo",
-  "version": "0.0.0",
+  "name": "@openclaude/monorepo",
+  "version": "1.0.0",
+  "description": "OpenClaude IDE - AI-Powered IDE for Indian Developers, built on Eclipse Theia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankr-in/openclaude-ide.git"
+  },
+  "author": "Ankr.in <dev@ankr.in>",
+  "homepage": "https://ankr.in/opencode",
   "engines": {
     "node": ">=20"
   },
