@@ -1,0 +1,442 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 Ankr.in and others.
+ *
+ * This program and the accompanying materials are made available under a
+ * proprietary license. Unauthorized copying or distribution is prohibited.
+ * *****************************************************************************/
+
+/**
+ * OpenClaude Team Dashboard Styles
+ */
+
+.openclaude-team-dashboard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--theia-editor-background);
+    color: var(--theia-editor-foreground);
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    flex-shrink: 0;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.dashboard-actions .theia-button.active {
+    background: var(--theia-button-background);
+    color: var(--theia-button-foreground);
+}
+
+/* Loading/Error States */
+.dashboard-loading,
+.dashboard-error {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 48px;
+    text-align: center;
+}
+
+.dashboard-loading i {
+    font-size: 48px;
+    color: var(--theia-icon-foreground);
+}
+
+.dashboard-error {
+    color: var(--theia-errorForeground);
+}
+
+.dashboard-error i {
+    font-size: 48px;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+/* Period Info */
+.dashboard-period {
+    padding: 12px;
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--theia-descriptionForeground);
+    text-align: center;
+}
+
+/* Quick Stats */
+.dashboard-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.quick-stat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 8px;
+}
+
+.quick-stat i {
+    font-size: 32px;
+    color: var(--theia-button-background);
+}
+
+.quick-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--theia-foreground);
+}
+
+.quick-stat-label {
+    font-size: 13px;
+    color: var(--theia-descriptionForeground);
+    margin-top: 4px;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+    margin-bottom: 32px;
+}
+
+.dashboard-section h3 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.stats-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-top: 3px solid;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stats-card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.stats-card-content {
+    flex: 1;
+}
+
+.stats-card-title {
+    font-size: 13px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 4px;
+}
+
+.stats-card-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--theia-foreground);
+}
+
+/* Team Members Grid */
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.team-member {
+    padding: 16px;
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-member:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.team-member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.team-member-info {
+    flex: 1;
+}
+
+.team-member-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.team-member-role {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.activity-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.activity-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.activity-status.active .activity-indicator {
+    background: #4caf50;
+    animation: pulse 2s infinite;
+}
+
+.activity-status.idle .activity-indicator {
+    background: #ff9800;
+}
+
+.activity-status.offline .activity-indicator {
+    background: #9e9e9e;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.team-member-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.team-member-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.team-member-stat i {
+    color: var(--theia-icon-foreground);
+    font-size: 14px;
+}
+
+.team-member-footer {
+    padding-top: 12px;
+    border-top: 1px solid var(--theia-panel-border);
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+/* Activity Feed */
+.activity-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 48px;
+    text-align: center;
+    color: var(--theia-descriptionForeground);
+}
+
+.activity-empty i {
+    font-size: 48px;
+    opacity: 0.5;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-left: 3px solid;
+    border-left-color: var(--theia-button-background);
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.activity-item:hover {
+    background: var(--theia-list-hoverBackground);
+}
+
+.activity-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-header {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.activity-user {
+    font-weight: 600;
+}
+
+.activity-description {
+    color: var(--theia-descriptionForeground);
+}
+
+.activity-resource {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 6px 8px;
+    background: var(--theia-editor-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    font-family: var(--monaco-monospace-font);
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.activity-resource i {
+    font-size: 11px;
+}
+
+.activity-time {
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    flex-shrink: 0;
+}
+
+/* Scrollbar Styling */
+.dashboard-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dashboard-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+    background: var(--theia-scrollbarSlider-background);
+    border-radius: 4px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover {
+    background: var(--theia-scrollbarSlider-hoverBackground);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .team-members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-quick-stats {
+        grid-template-columns: 1fr;
+    }
+}

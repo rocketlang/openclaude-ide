@@ -1,0 +1,176 @@
+PROPRIETARY SOFTWARE LICENSE AGREEMENT
+
+OpenClaude Integration for Theia IDE
+Copyright (c) 2026 Ankr.in. All rights reserved.
+
+This software and associated documentation files (the "Software") are proprietary
+and confidential to Ankr.in.
+
+LICENSE GRANT
+
+Subject to the terms and conditions of this Agreement and payment of applicable
+fees, Ankr.in grants you a limited, non-exclusive, non-transferable, revocable
+license to use the Software.
+
+PERMITTED USES
+
+1. Individual Developers (Free Tier):
+   - Use for personal, non-commercial projects
+   - Limited to 100 AI requests per month
+   - Single user only
+
+2. Professional Developers (Pro Tier):
+   - Unlimited use for personal projects
+   - Unlimited AI requests
+   - Commercial use permitted
+   - Single user license
+
+3. Teams (Team Tier):
+   - Use within your organization
+   - Number of users as per your subscription
+   - Commercial use permitted
+   - Team collaboration features
+
+4. Enterprise (Enterprise Tier):
+   - Custom terms as per your agreement
+   - Self-hosting permitted
+   - Source code access (optional)
+   - Custom integrations permitted
+
+RESTRICTIONS
+
+You may NOT:
+
+1. Copy, modify, or create derivative works of the Software
+2. Reverse engineer, decompile, or disassemble the Software
+3. Distribute, sell, lease, rent, or sublicense the Software
+4. Remove or modify any proprietary notices or labels
+5. Use the Software to develop competing products
+6. Share your license key or credentials with others
+7. Exceed your subscription tier limits
+
+INTELLECTUAL PROPERTY
+
+All title, ownership rights, and intellectual property rights in and to the
+Software remain with Ankr.in. This Agreement does not grant you any rights to
+trademarks, service marks, or trade names of Ankr.in.
+
+CONFIDENTIALITY
+
+The Software contains trade secrets and proprietary information of Ankr.in.
+You agree to maintain the confidentiality of the Software and not disclose
+it to any third party without prior written consent from Ankr.in.
+
+DATA COLLECTION
+
+The Software may collect:
+- Usage statistics
+- Error reports
+- Performance metrics
+- API usage data
+
+This data is used solely to improve the Software and is handled in accordance
+with our Privacy Policy available at https://openclaude.io/privacy.
+
+DISCLAIMER OF WARRANTIES
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ANKR.IN BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL ANKR.IN BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT,
+OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES
+FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS
+INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR
+INABILITY TO USE THE SOFTWARE, EVEN IF ANKR.IN HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+TERMINATION
+
+This license is effective until terminated. Your rights under this license
+will terminate automatically without notice from Ankr.in if you fail to
+comply with any term(s) of this Agreement. Upon termination, you must cease
+all use of the Software and destroy all copies.
+
+SUBSCRIPTION TERMS
+
+- Subscriptions are billed monthly or annually
+- Automatic renewal unless cancelled
+- Refunds available within 30 days of purchase
+- Price changes communicated 30 days in advance
+- Downgrades effective next billing cycle
+- Cancellation effective end of billing period
+
+ENTERPRISE AGREEMENTS
+
+Enterprise customers may have separate agreements that supersede this license.
+Contact enterprise@openclaude.io for custom terms.
+
+OPEN SOURCE COMPONENTS
+
+This Software includes open source components licensed under their respective
+licenses. A complete list is available at https://openclaude.io/licenses.
+
+These components are NOT covered by this proprietary license and retain their
+original licenses (MIT, Apache 2.0, etc.).
+
+EXPORT COMPLIANCE
+
+You agree to comply with all applicable export laws and restrictions and
+regulations of any United States or foreign agency or authority, and not to
+export or re-export the Software in violation of any such restrictions, laws
+or regulations.
+
+GOVERNING LAW
+
+This Agreement shall be governed by the laws of [Your Jurisdiction], without
+regard to its conflict of law provisions.
+
+ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between you and Ankr.in
+concerning the Software and supersedes all prior or contemporaneous oral or
+written communications, proposals, and representations.
+
+AMENDMENTS
+
+Ankr.in reserves the right to modify this Agreement at any time. Continued
+use of the Software after changes constitutes acceptance of the modified terms.
+
+SEVERABILITY
+
+If any provision of this Agreement is held to be unenforceable, such provision
+shall be reformed only to the extent necessary to make it enforceable, and the
+remaining provisions shall remain in full force and effect.
+
+CONTACT
+
+For licensing questions, contact:
+Email: licensing@openclaude.io
+Web: https://openclaude.io/licensing
+Phone: +1-XXX-XXX-XXXX
+
+For support:
+Email: support@openclaude.io
+Web: https://openclaude.io/support
+
+For enterprise inquiries:
+Email: enterprise@openclaude.io
+
+---
+
+ACKNOWLEDGMENT
+
+BY INSTALLING OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS
+AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.
+
+---
+
+Ankr.in
+https://openclaude.io
+Copyright (c) 2026 Ankr.in. All rights reserved.

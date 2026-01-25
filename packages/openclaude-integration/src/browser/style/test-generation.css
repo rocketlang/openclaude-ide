@@ -1,0 +1,357 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 Ankr.in and others.
+ *
+ * This program and the accompanying materials are made available under a
+ * proprietary license. Unauthorized copying or distribution is prohibited.
+ * *****************************************************************************/
+
+/**
+ * OpenClaude Test Generation Styles
+ */
+
+/* Test Generation Dialog */
+.openclaude-test-generation-dialog {
+    padding: 16px;
+    min-width: 500px;
+}
+
+.openclaude-test-generation-dialog .dialog-section {
+    margin-bottom: 16px;
+}
+
+.openclaude-test-generation-dialog label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--theia-foreground);
+}
+
+.openclaude-test-generation-dialog .theia-input,
+.openclaude-test-generation-dialog .theia-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--theia-panel-border);
+    background: var(--theia-input-background);
+    color: var(--theia-input-foreground);
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.openclaude-test-generation-dialog .theia-input:focus,
+.openclaude-test-generation-dialog .theia-select:focus {
+    outline: 1px solid var(--theia-focusBorder);
+    border-color: var(--theia-focusBorder);
+}
+
+.openclaude-test-generation-dialog .dialog-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(100, 200, 255, 0.1);
+    border-left: 3px solid #64c8ff;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.openclaude-test-generation-dialog .dialog-info i {
+    color: #64c8ff;
+    font-size: 16px;
+}
+
+.openclaude-test-generation-dialog .dialog-info span {
+    font-size: 13px;
+    color: var(--theia-descriptionForeground);
+}
+
+/* Test Preview Widget */
+.openclaude-test-preview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--theia-editor-background);
+    color: var(--theia-editor-foreground);
+}
+
+/* Header */
+.openclaude-test-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    flex-shrink: 0;
+}
+
+.openclaude-test-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.openclaude-test-header .generation-id {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    font-family: var(--monaco-monospace-font);
+}
+
+/* Loading State */
+.openclaude-test-loading {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.openclaude-test-loading .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--theia-panel-border);
+    border-top-color: var(--theia-button-background);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Empty State */
+.openclaude-test-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px;
+    text-align: center;
+    color: var(--theia-descriptionForeground);
+}
+
+.openclaude-test-empty i {
+    color: var(--theia-icon-foreground);
+    opacity: 0.5;
+}
+
+.openclaude-test-empty h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+.openclaude-test-empty code {
+    background: var(--theia-input-background);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: var(--monaco-monospace-font);
+    font-size: 13px;
+}
+
+/* Content */
+.openclaude-test-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+/* Coverage */
+.openclaude-test-coverage {
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.openclaude-test-coverage h4 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.coverage-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.coverage-label {
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    font-weight: 500;
+}
+
+.coverage-bar {
+    height: 8px;
+    background: var(--theia-editor-background);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.coverage-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    transition: width 0.3s ease;
+}
+
+.coverage-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+/* Tests List */
+.openclaude-test-list {
+    margin-top: 16px;
+}
+
+.test-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.test-list-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.test-list-header .theia-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.openclaude-test-no-tests {
+    text-align: center;
+    padding: 48px 32px;
+    color: var(--theia-descriptionForeground);
+}
+
+.openclaude-test-no-tests i {
+    color: #ffc800;
+    margin-bottom: 16px;
+}
+
+.openclaude-test-no-tests h4 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: var(--theia-foreground);
+}
+
+/* Test Item */
+.test-item {
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.test-item:hover {
+    background: var(--theia-list-hoverBackground);
+    border-color: var(--theia-focusBorder);
+}
+
+.test-item.selected {
+    border-color: var(--theia-button-background);
+}
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.test-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.test-info i {
+    color: var(--theia-icon-foreground);
+}
+
+.test-name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.test-type {
+    padding: 2px 8px;
+    background: var(--theia-badge-background);
+    color: var(--theia-badge-foreground);
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.test-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.test-actions .theia-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    padding: 4px 12px;
+}
+
+.test-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 8px;
+}
+
+.test-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.test-meta i {
+    color: var(--theia-icon-foreground);
+    opacity: 0.7;
+}
+
+.test-code {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--theia-panel-border);
+}
+
+.test-code pre {
+    margin: 0;
+    padding: 12px;
+    background: var(--theia-editor-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: var(--monaco-monospace-font);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.test-code code {
+    color: var(--theia-editor-foreground);
+}

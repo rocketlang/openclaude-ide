@@ -1,0 +1,446 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 Ankr.in and others.
+ *
+ * This program and the accompanying materials are made available under a
+ * proprietary license. Unauthorized copying or distribution is prohibited.
+ * *****************************************************************************/
+
+/**
+ * OpenClaude Code Review Panel Styles
+ */
+
+.openclaude-code-review {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--theia-editor-background);
+    color: var(--theia-editor-foreground);
+}
+
+/* Header */
+.openclaude-review-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    flex-shrink: 0;
+}
+
+.openclaude-review-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.openclaude-review-header .review-id {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    font-family: var(--monaco-monospace-font);
+}
+
+/* Loading State */
+.openclaude-review-loading {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.openclaude-review-loading .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--theia-panel-border);
+    border-top-color: var(--theia-button-background);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.openclaude-review-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px;
+    text-align: center;
+    color: var(--theia-descriptionForeground);
+}
+
+.openclaude-review-empty i {
+    color: var(--theia-icon-foreground);
+    opacity: 0.5;
+}
+
+.openclaude-review-empty h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+.openclaude-review-empty code {
+    background: var(--theia-input-background);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: var(--monaco-monospace-font);
+    font-size: 13px;
+}
+
+/* Content */
+.openclaude-review-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+/* Summary */
+.openclaude-review-summary {
+    background: var(--theia-input-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.openclaude-review-summary h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.summary-stats .stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: var(--theia-editor-background);
+    border-radius: 4px;
+}
+
+.summary-stats .label {
+    color: var(--theia-descriptionForeground);
+    font-size: 13px;
+}
+
+.summary-stats .value {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.severity-breakdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.severity-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.severity-item.blocker {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff4444;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.severity-item.critical {
+    background: rgba(255, 100, 0, 0.1);
+    color: #ff6600;
+    border: 1px solid rgba(255, 100, 0, 0.3);
+}
+
+.severity-item.major {
+    background: rgba(255, 200, 0, 0.1);
+    color: #ffc800;
+    border: 1px solid rgba(255, 200, 0, 0.3);
+}
+
+.severity-item.minor {
+    background: rgba(100, 200, 255, 0.1);
+    color: #64c8ff;
+    border: 1px solid rgba(100, 200, 255, 0.3);
+}
+
+.severity-item.info {
+    background: rgba(150, 150, 150, 0.1);
+    color: #999999;
+    border: 1px solid rgba(150, 150, 150, 0.3);
+}
+
+/* Issues */
+.openclaude-review-issues {
+    margin-top: 16px;
+}
+
+.openclaude-review-issues h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.openclaude-review-no-issues {
+    text-align: center;
+    padding: 48px 32px;
+}
+
+.openclaude-review-no-issues i {
+    margin-bottom: 16px;
+}
+
+.openclaude-review-no-issues h4 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #4caf50;
+}
+
+/* File Issues */
+.file-issues {
+    margin-bottom: 20px;
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.file-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--theia-input-background);
+    border-bottom: 1px solid var(--theia-panel-border);
+    font-weight: 500;
+}
+
+.file-header .file-name {
+    flex: 1;
+    font-family: var(--monaco-monospace-font);
+    font-size: 13px;
+}
+
+.file-header .issue-count {
+    background: var(--theia-badge-background);
+    color: var(--theia-badge-foreground);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.issues-list {
+    background: var(--theia-editor-background);
+}
+
+/* Individual Issue */
+.issue-item {
+    padding: 16px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    transition: background 0.15s;
+}
+
+.issue-item:last-child {
+    border-bottom: none;
+}
+
+.issue-item:hover {
+    background: var(--theia-list-hoverBackground);
+    cursor: pointer;
+}
+
+.issue-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.issue-header i {
+    width: 16px;
+}
+
+.issue-header .severity {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.severity-blocker .severity {
+    color: #ff4444;
+}
+
+.severity-critical .severity {
+    color: #ff6600;
+}
+
+.severity-major .severity {
+    color: #ffc800;
+}
+
+.severity-minor .severity {
+    color: #64c8ff;
+}
+
+.severity-info .severity {
+    color: #999999;
+}
+
+.issue-header .location {
+    color: var(--theia-descriptionForeground);
+}
+
+.issue-header .category {
+    margin-left: auto;
+    padding: 2px 8px;
+    background: var(--theia-input-background);
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.issue-message {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.issue-fix {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(100, 200, 255, 0.1);
+    border-left: 3px solid #64c8ff;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.issue-fix i {
+    color: #64c8ff;
+    margin-top: 2px;
+}
+
+.issue-rule {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.issue-rule code {
+    background: var(--theia-input-background);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: var(--monaco-monospace-font);
+    font-size: 11px;
+}
+
+/* Monaco Editor Decorations */
+
+/* Squiggly underlines */
+.openclaude-code-review-decoration-blocker,
+.openclaude-code-review-decoration-critical {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 3' enable-background='new 0 0 6 3' height='3' width='6'%3E%3Cg fill='%23ff4444'%3E%3Cpolygon points='5.5,0 2.5,3 1.1,3 4.1,0'/%3E%3Cpolygon points='4,0 6,2 6,0.6 5.4,0'/%3E%3Cpolygon points='0,2 1,3 2.4,3 0,0.6'/%3E%3C/g%3E%3C/svg%3E") repeat-x bottom left;
+    padding-bottom: 2px;
+}
+
+.openclaude-code-review-decoration-major {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 3' enable-background='new 0 0 6 3' height='3' width='6'%3E%3Cg fill='%23ffc800'%3E%3Cpolygon points='5.5,0 2.5,3 1.1,3 4.1,0'/%3E%3Cpolygon points='4,0 6,2 6,0.6 5.4,0'/%3E%3Cpolygon points='0,2 1,3 2.4,3 0,0.6'/%3E%3C/g%3E%3C/svg%3E") repeat-x bottom left;
+    padding-bottom: 2px;
+}
+
+.openclaude-code-review-decoration-minor,
+.openclaude-code-review-decoration-info {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 3' enable-background='new 0 0 6 3' height='3' width='6'%3E%3Cg fill='%2364c8ff'%3E%3Cpolygon points='5.5,0 2.5,3 1.1,3 4.1,0'/%3E%3Cpolygon points='4,0 6,2 6,0.6 5.4,0'/%3E%3Cpolygon points='0,2 1,3 2.4,3 0,0.6'/%3E%3C/g%3E%3C/svg%3E") repeat-x bottom left;
+    padding-bottom: 2px;
+}
+
+/* Gutter icons */
+.openclaude-code-review-glyph-blocker,
+.openclaude-code-review-glyph-critical {
+    background: var(--theia-editorGutter-background);
+    width: 16px !important;
+    height: 16px;
+    margin-left: 3px;
+}
+
+.openclaude-code-review-glyph-blocker::before {
+    content: '🔴';
+    font-size: 10px;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+}
+
+.openclaude-code-review-glyph-critical::before {
+    content: '🟠';
+    font-size: 10px;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+}
+
+.openclaude-code-review-glyph-major {
+    background: var(--theia-editorGutter-background);
+    width: 16px !important;
+    height: 16px;
+    margin-left: 3px;
+}
+
+.openclaude-code-review-glyph-major::before {
+    content: '🟡';
+    font-size: 10px;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+}
+
+.openclaude-code-review-glyph-minor {
+    background: var(--theia-editorGutter-background);
+    width: 16px !important;
+    height: 16px;
+    margin-left: 3px;
+}
+
+.openclaude-code-review-glyph-minor::before {
+    content: '🔵';
+    font-size: 10px;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+}
+
+.openclaude-code-review-glyph-info {
+    background: var(--theia-editorGutter-background);
+    width: 16px !important;
+    height: 16px;
+    margin-left: 3px;
+}
+
+.openclaude-code-review-glyph-info::before {
+    content: 'ℹ️';
+    font-size: 10px;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+}

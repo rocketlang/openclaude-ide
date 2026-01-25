@@ -29,6 +29,7 @@
   },
   "theiaPluginsDir": "../../plugins",
   "dependencies": {
+    "@openclaude/integration": "1.0.0",
     "@theia/ai-anthropic": "1.67.0",
     "@theia/ai-chat": "1.67.0",
     "@theia/ai-chat-ui": "1.67.0",

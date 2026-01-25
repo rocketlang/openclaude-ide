@@ -1,0 +1,112 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 Ankr.in and others.
+ *
+ * This program and the accompanying materials are made available under a
+ * proprietary license. Unauthorized copying or distribution is prohibited.
+ * *****************************************************************************/
+
+/**
+ * OpenClaude AI Completion Styles
+ */
+
+/* AI Completion Badge */
+.monaco-editor .suggest-widget .monaco-list-row .monaco-highlighted-label .highlight {
+    color: var(--theia-textLink-foreground);
+}
+
+/* AI Completion Item Icon */
+.monaco-editor .suggest-widget .monaco-list-row.ai-completion {
+    background: rgba(100, 200, 255, 0.05);
+}
+
+.monaco-editor .suggest-widget .monaco-list-row.ai-completion:hover {
+    background: rgba(100, 200, 255, 0.1);
+}
+
+.monaco-editor .suggest-widget .monaco-list-row.focused.ai-completion {
+    background: rgba(100, 200, 255, 0.15);
+}
+
+/* AI Badge in Label */
+.monaco-editor .suggest-widget .monaco-list-row .label-name::before {
+    content: '';
+}
+
+/* Confidence Indicator */
+.monaco-editor .suggest-widget .monaco-list-row .details .confidence-high {
+    color: #4caf50;
+}
+
+.monaco-editor .suggest-widget .monaco-list-row .details .confidence-medium {
+    color: #ffc800;
+}
+
+.monaco-editor .suggest-widget .monaco-list-row .details .confidence-low {
+    color: #ff6600;
+}
+
+/* Enhanced Details Panel */
+.monaco-editor .suggest-details-container .ai-suggestion {
+    border-left: 3px solid #64c8ff;
+    padding-left: 8px;
+}
+
+.monaco-editor .suggest-details-container .ai-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    background: rgba(100, 200, 255, 0.2);
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #64c8ff;
+    margin-right: 8px;
+}
+
+/* Loading State for AI Completions */
+.monaco-editor .suggest-widget .ai-loading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: var(--theia-descriptionForeground);
+    font-size: 12px;
+}
+
+.monaco-editor .suggest-widget .ai-loading::before {
+    content: '🤖';
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Completion Item Kinds with AI Enhancement */
+.monaco-editor .suggest-widget .monaco-icon-label.ai-enhanced::after {
+    content: '✨';
+    margin-left: 4px;
+    font-size: 10px;
+}
+
+/* IntelliSense Documentation Enhancement */
+.monaco-editor .suggest-details-container .docs.ai-generated {
+    background: rgba(100, 200, 255, 0.05);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+/* Snippet Placeholder Styling */
+.monaco-editor .snippet-placeholder {
+    background: rgba(100, 200, 255, 0.1);
+    border: 1px solid rgba(100, 200, 255, 0.3);
+}
+
+.monaco-editor .snippet-placeholder.current {
+    background: rgba(100, 200, 255, 0.2);
+    border-color: #64c8ff;
+}
