@@ -1,0 +1,58 @@
+{
+  "name": "@theia/ai-swarm",
+  "version": "1.67.0",
+  "description": "Multi-agent swarm orchestration for Theia AI - enables lead agent to coordinate specialized sub-agents",
+  "license": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/theia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eclipse-theia/theia/issues"
+  },
+  "homepage": "https://github.com/eclipse-theia/theia",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
+  "dependencies": {
+    "@theia/ai-core": "1.67.0",
+    "@theia/ai-chat": "1.67.0",
+    "@theia/core": "1.67.0",
+    "@theia/editor": "1.67.0",
+    "@theia/filesystem": "1.67.0",
+    "@theia/workspace": "1.67.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.0",
+    "rimraf": "latest",
+    "typescript": "~5.4.5"
+  },
+  "scripts": {
+    "build": "theiaext build",
+    "clean": "theiaext clean",
+    "compile": "theiaext compile",
+    "lint": "theiaext lint",
+    "watch": "theiaext watch",
+    "test": "theiaext test"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/ai-swarm-frontend-module",
+      "frontendElectron": "lib/browser/ai-swarm-frontend-module",
+      "backend": "lib/node/ai-swarm-backend-module",
+      "backendElectron": "lib/node/ai-swarm-backend-module"
+    }
+  ],
+  "keywords": [
+    "theia",
+    "ai",
+    "swarm",
+    "multi-agent",
+    "orchestration",
+    "claude"
+  ]
+}

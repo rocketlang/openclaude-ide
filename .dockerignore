@@ -1,0 +1,61 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs (will be regenerated)
+**/lib
+**/dist
+**/out
+**/*.tsbuildinfo
+
+# Development files
+.git
+.gitignore
+.vscode
+.idea
+*.md
+!README.md
+
+# Test files
+**/*.spec.ts
+**/*.test.ts
+**/test
+**/tests
+**/__tests__
+
+# Documentation
+docs
+doc
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# Docker files (don't copy into image)
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Environment files
+.env*
+!.env.example
+
+# Logs
+*.log
+logs
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp
+temp
+*.tmp
+*.bak
+
+# Coverage
+coverage
+.nyc_output

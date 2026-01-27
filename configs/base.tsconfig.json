@@ -18,10 +18,10 @@
     "useDefineForClassFields": false,
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "target": "ES2023",
+    "target": "ES2022",
     "jsx": "react",
     "lib": [
-      "ES2023",
+      "ES2022",
       "DOM",
       "DOM.AsyncIterable"
     ],

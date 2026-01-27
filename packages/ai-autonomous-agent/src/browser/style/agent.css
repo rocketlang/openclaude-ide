@@ -1,0 +1,467 @@
+/* AI Autonomous Agent Widget Styles */
+
+.ai-agent-widget {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--theia-editor-background);
+    color: var(--theia-foreground);
+}
+
+.agent-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 12px;
+}
+
+.agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--theia-widget-border);
+}
+
+.agent-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.agent-controls label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.task-input {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--theia-input-border);
+    border-radius: 4px;
+    background: var(--theia-input-background);
+    color: var(--theia-input-foreground);
+    font-size: 13px;
+}
+
+.task-input input:focus {
+    outline: none;
+    border-color: var(--theia-focusBorder);
+}
+
+.start-button {
+    padding: 8px 16px;
+    background: var(--theia-button-background);
+    color: var(--theia-button-foreground);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.start-button:hover:not(:disabled) {
+    background: var(--theia-button-hoverBackground);
+}
+
+.start-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.agent-content {
+    display: flex;
+    flex: 1;
+    gap: 12px;
+    min-height: 0;
+}
+
+.task-list {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--theia-widget-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.task-list h4 {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--theia-sideBar-background);
+    border-bottom: 1px solid var(--theia-widget-border);
+}
+
+.task-list .empty-state {
+    padding: 20px;
+    text-align: center;
+    color: var(--theia-descriptionForeground);
+    font-size: 12px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--theia-widget-border);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.task-item:hover {
+    background: var(--theia-list-hoverBackground);
+}
+
+.task-item.selected {
+    background: var(--theia-list-activeSelectionBackground);
+    color: var(--theia-list-activeSelectionForeground);
+}
+
+.task-status-icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-goal {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-meta {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-top: 2px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.icon-button {
+    padding: 4px;
+    background: transparent;
+    border: none;
+    color: var(--theia-foreground);
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.icon-button:hover {
+    opacity: 1;
+    background: var(--theia-toolbar-hoverBackground);
+}
+
+.task-detail {
+    flex: 1;
+    border: 1px solid var(--theia-widget-border);
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.task-detail-content {
+    padding: 16px;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.task-header h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.status-success {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+.status-error {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+.status-running {
+    background: rgba(0, 123, 255, 0.2);
+    color: #007bff;
+}
+
+.status-waiting {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.status-paused {
+    background: rgba(108, 117, 125, 0.2);
+    color: #6c757d;
+}
+
+.status-cancelled {
+    background: rgba(108, 117, 125, 0.2);
+    color: #6c757d;
+}
+
+.status-pending {
+    background: rgba(108, 117, 125, 0.1);
+    color: var(--theia-descriptionForeground);
+}
+
+/* Approval Request */
+.approval-request {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 6px;
+}
+
+.approval-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #ffc107;
+    margin-bottom: 8px;
+}
+
+.approval-content {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.approval-content p {
+    margin: 4px 0;
+}
+
+.approval-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.approve-button,
+.reject-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.approve-button {
+    background: #28a745;
+    color: white;
+}
+
+.approve-button:hover {
+    background: #218838;
+}
+
+.reject-button {
+    background: #dc3545;
+    color: white;
+}
+
+.reject-button:hover {
+    background: #c82333;
+}
+
+/* Thoughts Section */
+.thoughts-section {
+    margin-bottom: 16px;
+}
+
+.thoughts-section h5 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.thoughts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 8px;
+    background: var(--theia-sideBar-background);
+    border-radius: 4px;
+}
+
+.thought-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    padding: 4px 0;
+}
+
+.thought-item i {
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.thought-item.planning { color: #17a2b8; }
+.thought-item.reasoning { color: #ffc107; }
+.thought-item.analysis { color: #6f42c1; }
+.thought-item.decision { color: #28a745; }
+.thought-item.observation { color: var(--theia-foreground); }
+.thought-item.reflection { color: #6c757d; }
+.thought-item.error { color: #dc3545; }
+
+/* Actions Section */
+.actions-section {
+    margin-bottom: 16px;
+}
+
+.actions-section h5 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.action-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background: var(--theia-sideBar-background);
+    border-radius: 4px;
+    border-left: 3px solid transparent;
+}
+
+.action-item.completed {
+    border-left-color: #28a745;
+}
+
+.action-item.failed {
+    border-left-color: #dc3545;
+}
+
+.action-item.running {
+    border-left-color: #007bff;
+}
+
+.action-item.pending {
+    border-left-color: #6c757d;
+}
+
+.action-status {
+    font-size: 14px;
+    width: 20px;
+    text-align: center;
+}
+
+.action-info {
+    flex: 1;
+}
+
+.action-type {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 2px;
+}
+
+.action-description {
+    font-size: 13px;
+}
+
+.action-error {
+    font-size: 12px;
+    color: #dc3545;
+    margin-top: 4px;
+}
+
+.action-duration {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-top: 4px;
+}
+
+/* Result Section */
+.result-section h5 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.result-box {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.result-box.success {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.result-box.failure {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.result-summary {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.result-files,
+.result-next-steps {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.result-files ul,
+.result-next-steps ul {
+    margin: 4px 0 0 0;
+    padding-left: 20px;
+}
+
+.result-files li,
+.result-next-steps li {
+    margin: 2px 0;
+}

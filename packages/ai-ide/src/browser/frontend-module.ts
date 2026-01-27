@@ -85,7 +85,8 @@ import { TaskContextSummaryVariableContribution } from './task-background-summar
 import { GitHubRepoVariableContribution } from './github-repo-variable-contribution';
 import { TaskContextFileStorageService } from './task-context-file-storage-service';
 import { TaskContextStorageService } from '@theia/ai-chat/lib/browser/task-context-service';
-import { CommandContribution, PreferenceContribution } from '@theia/core';
+import { CommandContribution, PreferenceContribution, MenuContribution } from '@theia/core';
+import { KeybindingContribution } from '@theia/core/lib/browser';
 import { AIPromptFragmentsConfigurationWidget } from './ai-configuration/prompt-fragments-configuration-widget';
 import { BrowserAutomation, browserAutomationPath } from '../common/browser-automation-protocol';
 import { GitHubRepoService, githubRepoServicePath } from '../common/github-repo-protocol';
@@ -105,6 +106,7 @@ import { CreateTaskContextFunction, GetTaskContextFunction, EditTaskContextFunct
 import { FixGitHubTicketCommandContribution } from './implement-gh-ticket-command-contribution';
 import { AnalyzesGhTicketCommandContribution } from './analyze-gh-ticket-command-contribution';
 import { AddressGhReviewCommandContribution } from './address-pr-review-command-contribution';
+import { AIQuickShortcutsContribution } from './ai-quick-shortcuts-contribution';
 
 export default new ContainerModule((bind, _unbind, _isBound, rebind) => {
     bind(PreferenceContribution).toConstantValue({ schema: aiIdePreferenceSchema });
@@ -269,6 +271,12 @@ export default new ContainerModule((bind, _unbind, _isBound, rebind) => {
     rebind(TaskContextStorageService).toService(TaskContextFileStorageService);
 
     bind(CommandContribution).to(SummarizeSessionCommandContribution);
+
+    // Quick keyboard shortcuts and theme toggle
+    bind(AIQuickShortcutsContribution).toSelf().inSingletonScope();
+    bind(CommandContribution).toService(AIQuickShortcutsContribution);
+    bind(KeybindingContribution).toService(AIQuickShortcutsContribution);
+    bind(MenuContribution).toService(AIQuickShortcutsContribution);
     bind(AIPromptFragmentsConfigurationWidget).toSelf();
     bind(WidgetFactory)
         .toDynamicValue(ctx => ({

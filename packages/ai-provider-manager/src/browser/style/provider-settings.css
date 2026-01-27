@@ -1,0 +1,349 @@
+/* AI Provider Settings Widget Styles */
+
+.ai-provider-settings-widget {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--theia-editor-background);
+    color: var(--theia-foreground);
+}
+
+.ai-provider-settings-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 8px;
+}
+
+/* Tabs */
+.settings-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+}
+
+.tab-button {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--theia-foreground);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.tab-button:hover {
+    background: var(--theia-list-hoverBackground);
+}
+
+.tab-button.active {
+    background: var(--theia-button-background);
+    color: var(--theia-button-foreground);
+}
+
+/* Content */
+.settings-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Providers Tab */
+.providers-tab {
+    display: flex;
+    gap: 16px;
+    height: 100%;
+}
+
+.providers-list {
+    width: 200px;
+    border-right: 1px solid var(--theia-panel-border);
+    padding-right: 16px;
+}
+
+.providers-list h3 {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.provider-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.provider-item:hover {
+    background: var(--theia-list-hoverBackground);
+}
+
+.provider-item.selected {
+    background: var(--theia-list-activeSelectionBackground);
+    color: var(--theia-list-activeSelectionForeground);
+}
+
+.provider-item.disabled {
+    opacity: 0.6;
+}
+
+.provider-status {
+    font-size: 12px;
+}
+
+.provider-status.validated {
+    color: var(--theia-successForeground, #4caf50);
+}
+
+.provider-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.provider-type {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* Provider Details */
+.provider-details {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.provider-details h3 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.provider-details h4 {
+    margin: 16px 0 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 6px 8px;
+    border: 1px solid var(--theia-input-border);
+    background: var(--theia-input-background);
+    color: var(--theia-input-foreground);
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* API Key Input */
+.api-key-input {
+    display: flex;
+    gap: 8px;
+}
+
+.api-key-input input {
+    flex: 1;
+}
+
+.save-key-button {
+    padding: 6px 12px;
+    background: var(--theia-button-background);
+    color: var(--theia-button-foreground);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-key-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Validation Section */
+.validation-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.validate-button {
+    padding: 8px 16px;
+    background: var(--theia-button-secondaryBackground);
+    color: var(--theia-button-secondaryForeground);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.validate-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.validation-status {
+    font-size: 12px;
+}
+
+.validation-status.success {
+    color: var(--theia-successForeground, #4caf50);
+}
+
+.validation-status.error {
+    color: var(--theia-errorForeground, #f44336);
+}
+
+/* Models Section */
+.models-section {
+    margin-top: 16px;
+}
+
+.models-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.model-item {
+    padding: 12px;
+    background: var(--theia-editor-inactiveSelectionBackground);
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.model-item.default {
+    border-color: var(--theia-focusBorder);
+}
+
+.model-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.model-name {
+    font-weight: 500;
+}
+
+.default-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: var(--theia-badge-background);
+    color: var(--theia-badge-foreground);
+    border-radius: 10px;
+}
+
+.model-details {
+    display: flex;
+    gap: 16px;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 6px;
+}
+
+.model-capabilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.capability-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: var(--theia-textBlockQuote-background);
+    border-radius: 3px;
+}
+
+.set-default-button {
+    font-size: 11px;
+    padding: 4px 8px;
+    background: transparent;
+    border: 1px solid var(--theia-button-border, var(--theia-contrastBorder));
+    color: var(--theia-foreground);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.set-default-button:hover {
+    background: var(--theia-button-hoverBackground);
+}
+
+/* Usage Tab */
+.usage-tab {
+    padding: 8px;
+}
+
+.usage-tab h3 {
+    margin: 0 0 16px 0;
+}
+
+.usage-summary {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.usage-card {
+    flex: 1;
+    padding: 16px;
+    background: var(--theia-editor-inactiveSelectionBackground);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.usage-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.usage-amount {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.usage-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.usage-actions button {
+    padding: 8px 16px;
+    background: var(--theia-button-secondaryBackground);
+    color: var(--theia-button-secondaryForeground);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Budget Tab */
+.budget-tab {
+    padding: 8px;
+}
+
+.budget-tab h3 {
+    margin: 0 0 16px 0;
+}

@@ -1,0 +1,400 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 ANKR Labs and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
+ ***************************************************************************** */
+
+.diff-preview-widget {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--theia-editor-background);
+}
+
+.diff-preview-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Header */
+.diff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--theia-sideBarSectionHeader-background);
+    border-bottom: 1px solid var(--theia-panel-border);
+}
+
+.diff-header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.diff-header-title .codicon {
+    font-size: 14px;
+}
+
+.diff-header-title .badge {
+    background: var(--theia-badge-background);
+    color: var(--theia-badge-foreground);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.diff-header-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.diff-header-actions button {
+    padding: 4px 8px;
+    min-width: auto;
+}
+
+/* Empty State */
+.diff-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--theia-descriptionForeground);
+    padding: 24px;
+    text-align: center;
+}
+
+.diff-empty-state .codicon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.diff-empty-state p {
+    margin: 4px 0;
+}
+
+.diff-empty-state .description {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Change List */
+.diff-change-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.diff-change {
+    background: var(--theia-list-hoverBackground);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.diff-change.selected {
+    border-color: var(--theia-focusBorder);
+}
+
+.diff-change.accepted {
+    border-left: 3px solid var(--theia-charts-green);
+}
+
+.diff-change.rejected {
+    border-left: 3px solid var(--theia-charts-red);
+}
+
+.diff-change.partially-accepted {
+    border-left: 3px solid var(--theia-charts-yellow);
+}
+
+/* Change Header */
+.diff-change-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.diff-change-header:hover {
+    background: var(--theia-list-activeSelectionBackground);
+}
+
+.diff-file-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.diff-status-icon {
+    font-size: 14px;
+}
+
+.diff-status-icon.accepted {
+    color: var(--theia-charts-green);
+}
+
+.diff-status-icon.rejected {
+    color: var(--theia-charts-red);
+}
+
+.diff-status-icon.partially-accepted {
+    color: var(--theia-charts-yellow);
+}
+
+.diff-file-name {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.diff-hunk-count {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+}
+
+.diff-change-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.action-button {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--theia-foreground);
+    opacity: 0.7;
+    transition: all 0.1s;
+}
+
+.action-button:hover {
+    opacity: 1;
+    background: var(--theia-button-background);
+}
+
+.action-button.accept:hover {
+    color: var(--theia-charts-green);
+}
+
+.action-button.reject:hover {
+    color: var(--theia-charts-red);
+}
+
+.action-button.apply:hover {
+    color: var(--theia-textLink-foreground);
+}
+
+.action-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Hunks */
+.diff-hunks {
+    border-top: 1px solid var(--theia-panel-border);
+}
+
+.diff-hunk {
+    border-bottom: 1px solid var(--theia-panel-border);
+}
+
+.diff-hunk:last-child {
+    border-bottom: none;
+}
+
+.diff-hunk.accepted {
+    background: rgba(0, 200, 100, 0.05);
+}
+
+.diff-hunk.rejected {
+    background: rgba(200, 0, 0, 0.05);
+}
+
+.hunk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    background: var(--theia-editorWidget-background);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.hunk-header:hover {
+    background: var(--theia-list-hoverBackground);
+}
+
+.hunk-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.expand-icon {
+    transition: transform 0.2s;
+    font-size: 12px;
+}
+
+.hunk-location {
+    color: var(--theia-descriptionForeground);
+}
+
+.hunk-stats {
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.hunk-stats .added {
+    color: var(--theia-charts-green);
+}
+
+.hunk-stats .removed {
+    color: var(--theia-charts-red);
+}
+
+.hunk-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.hunk-button {
+    padding: 2px 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--theia-foreground);
+    opacity: 0.5;
+    transition: all 0.1s;
+}
+
+.hunk-button:hover {
+    opacity: 1;
+}
+
+.hunk-button.accept:hover,
+.hunk-button.accept.active {
+    color: var(--theia-charts-green);
+    background: rgba(0, 200, 100, 0.2);
+}
+
+.hunk-button.reject:hover,
+.hunk-button.reject.active {
+    color: var(--theia-charts-red);
+    background: rgba(200, 0, 0, 0.2);
+}
+
+/* Diff Lines */
+.hunk-lines {
+    font-family: var(--theia-code-font-family);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.diff-line {
+    display: flex;
+    white-space: pre;
+}
+
+.diff-line.added {
+    background: var(--theia-diffEditor-insertedTextBackground);
+}
+
+.diff-line.removed {
+    background: var(--theia-diffEditor-removedTextBackground);
+}
+
+.diff-line.unchanged {
+    background: transparent;
+}
+
+.line-number {
+    min-width: 40px;
+    padding: 0 8px;
+    text-align: right;
+    color: var(--theia-editorLineNumber-foreground);
+    background: var(--theia-editorGutter-background);
+    user-select: none;
+}
+
+.line-marker {
+    min-width: 16px;
+    padding: 0 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.diff-line.added .line-marker {
+    color: var(--theia-charts-green);
+}
+
+.diff-line.removed .line-marker {
+    color: var(--theia-charts-red);
+}
+
+.line-content {
+    flex: 1;
+    padding: 0 8px;
+}
+
+/* Description */
+.diff-description {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    background: var(--theia-editorWidget-background);
+    border-top: 1px solid var(--theia-panel-border);
+}
+
+.diff-description .codicon {
+    margin-top: 2px;
+}
+
+/* Scrollbar */
+.diff-change-list::-webkit-scrollbar,
+.hunk-lines::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.diff-change-list::-webkit-scrollbar-track,
+.hunk-lines::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.diff-change-list::-webkit-scrollbar-thumb,
+.hunk-lines::-webkit-scrollbar-thumb {
+    background: var(--theia-scrollbarSlider-background);
+    border-radius: 4px;
+}
+
+.diff-change-list::-webkit-scrollbar-thumb:hover,
+.hunk-lines::-webkit-scrollbar-thumb:hover {
+    background: var(--theia-scrollbarSlider-hoverBackground);
+}

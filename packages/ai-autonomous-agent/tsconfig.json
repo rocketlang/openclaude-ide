@@ -1,0 +1,19 @@
+{
+    "extends": "../../configs/base.tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "lib"
+    },
+    "include": [
+        "src"
+    ],
+    "references": [
+        { "path": "../core" },
+        { "path": "../editor" },
+        { "path": "../filesystem" },
+        { "path": "../workspace" },
+        { "path": "../terminal" },
+        { "path": "../ai-core" },
+        { "path": "../ai-planner" }
+    ]
+}

@@ -1,0 +1,250 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 ANKR Labs and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
+ ***************************************************************************** */
+
+.ai-memory-widget {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ai-memory-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 12px;
+    overflow-y: auto;
+    gap: 16px;
+}
+
+.ai-memory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--theia-panel-border);
+}
+
+.ai-memory-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+.ai-memory-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.ai-memory-section {
+    padding: 12px;
+    background: var(--theia-editor-background);
+    border-radius: 6px;
+    border: 1px solid var(--theia-panel-border);
+}
+
+.ai-memory-section h3 {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ai-memory-section h4 {
+    margin: 12px 0 8px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--theia-descriptionForeground);
+}
+
+.ai-memory-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+}
+
+.ai-memory-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ai-memory-stat .stat-label {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.ai-memory-stat .stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+.ai-memory-type-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ai-memory-type-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: var(--theia-sideBar-background);
+    border-radius: 4px;
+}
+
+.ai-memory-type-row .type-icon {
+    width: 20px;
+    text-align: center;
+    color: var(--theia-textLink-foreground);
+}
+
+.ai-memory-type-row .type-name {
+    flex: 1;
+    font-size: 12px;
+    color: var(--theia-foreground);
+}
+
+.ai-memory-type-row .type-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--theia-badge-foreground);
+    background: var(--theia-badge-background);
+    padding: 2px 8px;
+    border-radius: 10px;
+    min-width: 24px;
+    text-align: center;
+}
+
+.ai-memory-progress {
+    margin-top: 12px;
+}
+
+.ai-memory-progress .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 4px;
+}
+
+.ai-memory-progress .progress-bar {
+    height: 6px;
+    background: var(--theia-progressBar-background);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.ai-memory-progress .progress-fill {
+    height: 100%;
+    background: var(--theia-progressBar-foreground);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.ai-memory-actions-section {
+    margin-top: auto;
+}
+
+.ai-memory-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ai-memory-action-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.ai-memory-action-buttons button.warning {
+    background: var(--theia-inputValidation-warningBackground);
+    border-color: var(--theia-inputValidation-warningBorder);
+}
+
+.ai-memory-action-buttons button.warning:hover {
+    background: var(--theia-inputValidation-warningBorder);
+}
+
+/* Loading state */
+.ai-memory-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.ai-memory-loading .codicon-loading {
+    font-size: 24px;
+}
+
+/* Error state */
+.ai-memory-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 12px;
+    color: var(--theia-errorForeground);
+}
+
+.ai-memory-error .codicon-error {
+    font-size: 24px;
+}
+
+/* Empty state */
+.ai-memory-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+.ai-memory-empty .codicon-database {
+    font-size: 48px;
+    opacity: 0.5;
+}
+
+/* Animation for spin */
+@keyframes codicon-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.codicon-modifier-spin {
+    animation: codicon-spin 1.5s infinite linear;
+}
+
+/* Dark theme adjustments */
+.theia-dark .ai-memory-section {
+    background: var(--theia-sideBar-background);
+}
+
+.theia-dark .ai-memory-type-row {
+    background: var(--theia-editor-background);
+}

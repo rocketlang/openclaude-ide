@@ -1,0 +1,847 @@
+/* AI Swarm View Styles */
+
+.theia-swarm-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    overflow: auto;
+    background-color: var(--theia-editor-background);
+    color: var(--theia-foreground);
+}
+
+/* Session List */
+.swarm-session-list {
+    padding: 16px;
+}
+
+.swarm-session-list h2 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.swarm-empty-state {
+    color: var(--theia-descriptionForeground);
+    font-style: italic;
+}
+
+.swarm-sessions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.swarm-session-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.swarm-session-item:hover {
+    background-color: var(--theia-list-hoverBackground);
+}
+
+.swarm-session-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.swarm-session-status {
+    margin-bottom: 4px;
+}
+
+.swarm-session-task {
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.status-initializing {
+    background-color: #6b7280;
+    color: white;
+}
+
+.status-badge.status-planning {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.status-badge.status-delegating {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.status-badge.status-executing {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.status-badge.status-reviewing {
+    background-color: #ec4899;
+    color: white;
+}
+
+.status-badge.status-synthesizing {
+    background-color: #06b6d4;
+    color: white;
+}
+
+.status-badge.status-complete {
+    background-color: #10b981;
+    color: white;
+}
+
+.status-badge.status-failed {
+    background-color: #ef4444;
+    color: white;
+}
+
+.status-badge.status-paused {
+    background-color: #fbbf24;
+    color: black;
+}
+
+.status-badge.status-cancelled {
+    background-color: #9ca3af;
+    color: white;
+}
+
+/* Swarm View */
+.swarm-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 16px;
+}
+
+.swarm-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--theia-panel-border);
+}
+
+.swarm-header h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.swarm-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.swarm-content {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+}
+
+.swarm-task-board {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.swarm-task-board h3,
+.swarm-agents-panel h3,
+.swarm-metrics h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Task Board */
+.task-board {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.task-column {
+    flex: 1;
+    min-width: 180px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theia-sideBar-background);
+    border-radius: 4px;
+}
+
+.task-column-header {
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid;
+}
+
+.task-count {
+    background-color: var(--theia-badge-background);
+    color: var(--theia-badge-foreground);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.task-column-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.task-card {
+    background-color: var(--theia-editor-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task-card.priority-critical {
+    border-left: 3px solid #ef4444;
+}
+
+.task-card.priority-high {
+    border-left: 3px solid #f59e0b;
+}
+
+.task-card.priority-normal {
+    border-left: 3px solid #3b82f6;
+}
+
+.task-card.priority-low {
+    border-left: 3px solid #6b7280;
+}
+
+.task-title {
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.task-type {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 8px;
+}
+
+.task-assignee {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 8px;
+}
+
+.agent-icon {
+    font-size: 12px;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority-badge {
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.priority-badge.priority-critical {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
+.priority-badge.priority-high {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.priority-badge.priority-normal {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.priority-badge.priority-low {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+/* Agents Panel */
+.swarm-agents-panel {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.agents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.agent-card {
+    background-color: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.agent-card.status-working {
+    border-left: 3px solid #f59e0b;
+}
+
+.agent-card.status-idle {
+    border-left: 3px solid #10b981;
+}
+
+.agent-card.status-initializing {
+    border-left: 3px solid #3b82f6;
+}
+
+.agent-role {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.agent-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-indicator.status-working {
+    background-color: #f59e0b;
+    animation: pulse 1.5s infinite;
+}
+
+.status-indicator.status-idle {
+    background-color: #10b981;
+}
+
+.status-indicator.status-initializing {
+    background-color: #3b82f6;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.agent-task {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.agent-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+}
+
+/* Metrics */
+.swarm-metrics {
+    padding-top: 12px;
+    border-top: 1px solid var(--theia-panel-border);
+}
+
+.metrics-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.metric-card {
+    background-color: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    padding: 12px 16px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+.metric-label {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-top: 4px;
+}
+
+/* Buttons */
+.theia-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.theia-button.main {
+    background-color: var(--theia-button-background);
+    color: var(--theia-button-foreground);
+}
+
+.theia-button.main:hover {
+    background-color: var(--theia-button-hoverBackground);
+}
+
+.theia-button.secondary {
+    background-color: var(--theia-secondaryButton-background);
+    color: var(--theia-secondaryButton-foreground);
+}
+
+.theia-button.secondary:hover {
+    background-color: var(--theia-secondaryButton-hoverBackground);
+}
+
+.theia-button.danger {
+    background-color: #ef4444;
+    color: white;
+}
+
+.theia-button.danger:hover {
+    background-color: #dc2626;
+}
+
+/* Progress Overview */
+.progress-overview {
+    background-color: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: var(--theia-editor-background);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.progress-fill.success {
+    background-color: #10b981;
+}
+
+.progress-fill.error {
+    background-color: #ef4444;
+}
+
+.progress-fill.active {
+    background-color: #f59e0b;
+    animation: pulse-bg 1.5s infinite;
+}
+
+@keyframes pulse-bg {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.progress-text {
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: right;
+}
+
+.progress-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--theia-foreground);
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+}
+
+/* Details Row Layout */
+.details-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.details-section.flex-1 {
+    flex: 1;
+    min-width: 0;
+}
+
+.details-section h5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--theia-textLink-foreground);
+    cursor: pointer;
+    font-size: 11px;
+    padding: 2px 6px;
+}
+
+.toggle-btn:hover {
+    text-decoration: underline;
+}
+
+/* Activity Timeline */
+.activity-timeline {
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.activity-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--theia-panel-border);
+    font-size: 12px;
+}
+
+.activity-entry:last-child {
+    border-bottom: none;
+}
+
+.activity-entry.info {
+    color: var(--theia-foreground);
+}
+
+.activity-entry.success {
+    color: #10b981;
+}
+
+.activity-entry.warning {
+    color: #f59e0b;
+}
+
+.activity-entry.error {
+    color: #ef4444;
+}
+
+.activity-time {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    white-space: nowrap;
+}
+
+.activity-icon {
+    font-size: 12px;
+    width: 16px;
+    text-align: center;
+}
+
+.activity-icon.task::before { content: "\25A0"; }
+.activity-icon.agent::before { content: "\25CF"; }
+.activity-icon.system::before { content: "\25B6"; }
+.activity-icon.message::before { content: "\25C6"; }
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-message {
+    display: block;
+}
+
+.activity-details {
+    display: block;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-top: 2px;
+}
+
+/* Metrics Panel */
+.metrics-panel {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--theia-panel-border);
+}
+
+.metrics-panel h5 {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Enhanced Task Card */
+.task-card .task-progress {
+    margin-top: 8px;
+}
+
+.task-card .task-progress-bar {
+    height: 3px;
+    background-color: var(--theia-editor-background);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.task-card .task-progress-fill {
+    height: 100%;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+/* Agent Card Enhancements */
+.agent-card .agent-progress {
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+.agent-card .progress-mini {
+    height: 3px;
+    background-color: var(--theia-editor-background);
+    border-radius: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.agent-card .progress-mini-fill {
+    height: 100%;
+    background-color: #10b981;
+}
+
+/* Empty States */
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: var(--theia-descriptionForeground);
+    font-style: italic;
+}
+
+/* Swarm View Container */
+.swarm-view-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.swarm-view-header {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    margin-bottom: 16px;
+}
+
+.swarm-view-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.swarm-view-content {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Sessions Panel */
+.swarm-sessions-panel {
+    width: 280px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid var(--theia-panel-border);
+    font-weight: 600;
+}
+
+.sessions-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.session-item {
+    padding: 10px;
+    margin-bottom: 6px;
+    background-color: var(--theia-editor-background);
+    border: 1px solid var(--theia-panel-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.session-item:hover {
+    border-color: var(--theia-focusBorder);
+}
+
+.session-item.selected {
+    border-color: var(--theia-focusBorder);
+    background-color: var(--theia-list-activeSelectionBackground);
+}
+
+.session-name {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.session-status {
+    margin-bottom: 6px;
+}
+
+.session-metrics {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+}
+
+/* Details Panel */
+.swarm-details-panel {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.session-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.session-controls h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Column Headers with Colors */
+.task-column.backlog .column-header { border-color: #6b7280; }
+.task-column.ready .column-header { border-color: #3b82f6; }
+.task-column.in_progress .column-header { border-color: #f59e0b; }
+.task-column.review .column-header { border-color: #8b5cf6; }
+.task-column.done .column-header { border-color: #10b981; }
+.task-column.failed .column-header { border-color: #ef4444; }
+
+.column-header {
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-tasks {
+    padding: 8px;
+    flex: 1;
+    overflow-y: auto;
+}

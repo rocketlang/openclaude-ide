@@ -1,0 +1,311 @@
+/* *****************************************************************************
+ * Copyright (C) 2026 ANKR Labs and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
+ ***************************************************************************** */
+
+.streaming-chat-widget {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.streaming-chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--theia-editor-background);
+}
+
+/* Messages area */
+.streaming-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Individual message */
+.streaming-chat-message {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    max-width: 85%;
+}
+
+.streaming-chat-message.user {
+    align-self: flex-end;
+    background: var(--theia-button-background);
+    color: var(--theia-button-foreground);
+}
+
+.streaming-chat-message.assistant {
+    align-self: flex-start;
+    background: var(--theia-sideBar-background);
+    border: 1px solid var(--theia-panel-border);
+}
+
+/* Message header */
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.message-avatar {
+    font-size: 14px;
+}
+
+.message-role {
+    font-weight: 600;
+}
+
+.message-time {
+    margin-left: auto;
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* Message content */
+.message-content {
+    line-height: 1.5;
+}
+
+.message-text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Streaming cursor */
+.streaming-cursor {
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+    color: var(--theia-textLink-foreground);
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Code blocks */
+.code-block {
+    margin: 8px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--theia-editor-background);
+    border: 1px solid var(--theia-panel-border);
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    background: var(--theia-titleBar-activeBackground);
+    font-size: 11px;
+}
+
+.code-language {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--theia-descriptionForeground);
+}
+
+.code-copy {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--theia-foreground);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.code-copy:hover {
+    opacity: 1;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 12px;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: var(--theia-code-font-family);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Message stats */
+.message-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--theia-descriptionForeground);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--theia-panel-border);
+}
+
+.message-stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.message-stats .codicon {
+    font-size: 12px;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    color: var(--theia-descriptionForeground);
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--theia-textLink-foreground);
+    animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typing-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.typing-text {
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Error message */
+.streaming-chat-error {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--theia-inputValidation-errorBackground);
+    border: 1px solid var(--theia-inputValidation-errorBorder);
+    color: var(--theia-errorForeground);
+    font-size: 12px;
+}
+
+.streaming-chat-error .codicon {
+    font-size: 14px;
+}
+
+.streaming-chat-error button {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+/* Input area */
+.streaming-chat-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--theia-panel-border);
+    background: var(--theia-sideBar-background);
+}
+
+.streaming-chat-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--theia-input-border);
+    border-radius: 6px;
+    background: var(--theia-input-background);
+    color: var(--theia-input-foreground);
+    font-family: var(--theia-ui-font-family);
+    font-size: 13px;
+    resize: none;
+    outline: none;
+}
+
+.streaming-chat-input:focus {
+    border-color: var(--theia-focusBorder);
+}
+
+.streaming-chat-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.streaming-chat-input::placeholder {
+    color: var(--theia-input-placeholderForeground);
+}
+
+.streaming-chat-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.streaming-chat-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    font-size: 12px;
+}
+
+/* Scrollbar styling */
+.streaming-chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.streaming-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.streaming-chat-messages::-webkit-scrollbar-thumb {
+    background: var(--theia-scrollbarSlider-background);
+    border-radius: 4px;
+}
+
+.streaming-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--theia-scrollbarSlider-hoverBackground);
+}
+
+/* Dark theme adjustments */
+.theia-dark .streaming-chat-message.assistant {
+    background: var(--theia-editor-background);
+}
+
+.theia-dark .code-block {
+    background: rgba(0, 0, 0, 0.2);
+}

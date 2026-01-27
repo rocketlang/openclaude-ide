@@ -1,0 +1,17 @@
+{
+  "extends": "../../configs/base.tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "jsx": "react"
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    { "path": "../core" },
+    { "path": "../ai-core" },
+    { "path": "../ai-chat" }
+  ]
+}
