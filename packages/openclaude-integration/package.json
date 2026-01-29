@@ -39,6 +39,10 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^10.0.0",
+    "chai": "^4.3.0",
+    "mocha": "^10.2.0",
     "rimraf": "latest",
     "typescript": "~5.4.5"
   },
@@ -47,6 +51,7 @@
     "clean": "theiaext clean",
     "compile": "theiaext compile",
     "watch": "theiaext watch",
+    "test": "mocha --require reflect-metadata/Reflect lib/node/skill-loader-service.spec.js",
     "prepublishOnly": "npm run build"
   },
   "theiaExtensions": [
