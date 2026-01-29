@@ -9,15 +9,20 @@ import { ContainerModule } from '@theia/core/shared/inversify';
 import { ConnectionHandler, JsonRpcConnectionHandler } from '@theia/core';
 import { OpenClaudeBackendService, OPENCLAUDE_BACKEND_PATH } from '../common/openclaude-protocol';
 import { OpenClaudeBackendClient } from './openclaude-backend-client';
+import { SkillLoaderService } from './skill-loader-service';
 
 /**
  * Backend module for OpenClaude integration
  *
  * This module:
+ * - Binds the Skill Loader service for discovering SKILL.md files
  * - Binds the OpenClaude backend client implementation
  * - Exposes it via JSON-RPC for frontend access
  */
 export default new ContainerModule(bind => {
+    // Bind the Skill Loader service
+    bind(SkillLoaderService).toSelf().inSingletonScope();
+
     // Bind the backend service implementation
     bind(OpenClaudeBackendService).to(OpenClaudeBackendClient).inSingletonScope();
 

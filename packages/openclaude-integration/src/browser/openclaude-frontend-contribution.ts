@@ -124,6 +124,16 @@ export namespace OpenClaudeCommands {
         id: 'openclaude.showTeamDashboard',
         label: 'OpenClaude: Show Team Dashboard'
     };
+
+    export const LIST_SKILLS: Command = {
+        id: 'openclaude.listSkills',
+        label: 'OpenClaude: List Installed Skills'
+    };
+
+    export const RELOAD_SKILLS: Command = {
+        id: 'openclaude.reloadSkills',
+        label: 'OpenClaude: Reload Skills'
+    };
 }
 
 /**
@@ -516,6 +526,36 @@ export class OpenClaudeFrontendContribution implements CommandContribution {
             execute: async () => {
                 const widget = await this.widgetManager.getOrCreateWidget<TeamDashboardWidget>(TeamDashboardWidget.ID);
                 widget.activate();
+            }
+        });
+
+        // List installed skills command
+        commands.registerCommand(OpenClaudeCommands.LIST_SKILLS, {
+            execute: async () => {
+                try {
+                    const skills = await this.backendService.getLoadedSkills();
+                    if (skills.length === 0) {
+                        this.messageService.info('No skills installed. Install skills with: npx skills add <repo> -a openclaude');
+                    } else {
+                        const skillList = skills.map(s => `${s.name} (${s.scope})`).join(', ');
+                        this.messageService.info(`${skills.length} skill(s) loaded: ${skillList}`);
+                    }
+                    console.log('[OpenClaude] Loaded skills:', skills);
+                } catch (error) {
+                    this.messageService.error(`Failed to list skills: ${error}`);
+                }
+            }
+        });
+
+        // Reload skills command
+        commands.registerCommand(OpenClaudeCommands.RELOAD_SKILLS, {
+            execute: async () => {
+                try {
+                    const count = await this.backendService.reloadSkills();
+                    this.messageService.info(`Reloaded ${count} skill(s)`);
+                } catch (error) {
+                    this.messageService.error(`Failed to reload skills: ${error}`);
+                }
             }
         });
     }

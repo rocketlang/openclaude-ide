@@ -231,6 +231,35 @@ export interface OpenClaudeBackendService {
      * @param limit Optional limit
      */
     getTeamActivity(limit?: number): Promise<TeamActivity[]>;
+
+    /**
+     * Get all loaded skills
+     */
+    getLoadedSkills(): Promise<SkillInfo[]>;
+
+    /**
+     * Get skill context string for AI prompts
+     */
+    getSkillContext(): Promise<string>;
+
+    /**
+     * Reload skills from disk
+     */
+    reloadSkills(): Promise<number>;
+}
+
+/**
+ * Loaded skill information (exposed to frontend)
+ */
+export interface SkillInfo {
+    /** Skill name */
+    name: string;
+    /** Skill description */
+    description: string;
+    /** Whether project or global scope */
+    scope: 'project' | 'global';
+    /** Source file path */
+    sourcePath: string;
 }
 
 /**

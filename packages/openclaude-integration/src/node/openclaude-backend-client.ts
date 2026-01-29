@@ -5,7 +5,7 @@
 // proprietary license. Unauthorized copying or distribution is prohibited.
 // *****************************************************************************
 
-import { injectable, postConstruct } from '@theia/core/shared/inversify';
+import { injectable, postConstruct, inject } from '@theia/core/shared/inversify';
 import { GraphQLClient, gql } from 'graphql-request';
 import {
     OpenClaudeBackendService,
@@ -17,7 +17,8 @@ import {
     CompletionRequest,
     CompletionResult,
     DocumentationOptions,
-    DocumentationResult
+    DocumentationResult,
+    SkillInfo
 } from '../common/openclaude-protocol';
 import {
     OpenClaudeConfig,
@@ -25,12 +26,16 @@ import {
     StartReviewMutationResult,
     GetReviewQueryResult
 } from '../common/openclaude-types';
+import { SkillLoaderService } from './skill-loader-service';
 
 /**
  * GraphQL client for OpenClaude backend services
  */
 @injectable()
 export class OpenClaudeBackendClient implements OpenClaudeBackendService {
+
+    @inject(SkillLoaderService)
+    protected readonly skillLoader!: SkillLoaderService;
 
     protected client!: GraphQLClient;
     protected config: OpenClaudeConfig = DEFAULT_OPENCLAUDE_CONFIG;
@@ -1237,6 +1242,33 @@ export class OpenClaudeBackendClient implements OpenClaudeBackendService {
             console.error('[OpenClaude] Get team activity failed:', error);
             throw new Error(`Failed to get team activity: ${error}`);
         }
+    }
+
+    /**
+     * Get all loaded skills
+     */
+    async getLoadedSkills(): Promise<SkillInfo[]> {
+        return this.skillLoader.getSkills().map(skill => ({
+            name: skill.name,
+            description: skill.description,
+            scope: skill.scope,
+            sourcePath: skill.sourcePath
+        }));
+    }
+
+    /**
+     * Get skill context string for AI prompts
+     */
+    async getSkillContext(): Promise<string> {
+        return this.skillLoader.getSkillContext();
+    }
+
+    /**
+     * Reload skills from disk
+     */
+    async reloadSkills(): Promise<number> {
+        this.skillLoader.reload();
+        return this.skillLoader.getSkills().length;
     }
 
     /**
