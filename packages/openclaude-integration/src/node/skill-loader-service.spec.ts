@@ -20,7 +20,7 @@ before(() => {
 
 /**
  * Testable subclass that exposes protected methods for unit testing.
- * Also disables @postConstruct auto-loading so we control when skills load.
+ * Also disables initialize() auto-loading so we control when skills load.
  */
 class TestableSkillLoader extends SkillLoaderService {
 
@@ -37,8 +37,8 @@ class TestableSkillLoader extends SkillLoaderService {
         return this.loadSkillsFromDirectory(dir, scope);
     }
 
-    // Override init to prevent auto-loading during tests
-    protected override init(): void {
+    // Override initialize to prevent auto-loading during tests
+    override initialize(): void {
         // no-op: we call loadAllSkills manually in tests
     }
 

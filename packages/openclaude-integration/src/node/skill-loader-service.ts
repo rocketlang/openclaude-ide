@@ -5,7 +5,8 @@
 // proprietary license. Unauthorized copying or distribution is prohibited.
 // *****************************************************************************
 
-import { injectable, postConstruct } from '@theia/core/shared/inversify';
+import { injectable } from '@theia/core/shared/inversify';
+import { BackendApplicationContribution } from '@theia/core/lib/node';
 import * as fs from 'fs';
 import * as path from 'path';
 import { homedir } from 'os';
@@ -43,13 +44,12 @@ export interface LoadedSkill {
  * Makes skill content available to the AI context pipeline.
  */
 @injectable()
-export class SkillLoaderService {
+export class SkillLoaderService implements BackendApplicationContribution {
 
     protected skills: LoadedSkill[] = [];
     protected workspaceRoot: string = process.cwd();
 
-    @postConstruct()
-    protected init(): void {
+    initialize(): void {
         this.loadAllSkills();
         console.log(`[OpenClaude] Skill loader initialized: ${this.skills.length} skills loaded`);
     }

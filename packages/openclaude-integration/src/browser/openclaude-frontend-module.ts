@@ -23,6 +23,7 @@ import { CollaborationWidget } from './collaboration/collaboration-widget';
 import { CursorDecoratorProvider } from './collaboration/cursor-decorator-provider';
 import { ReviewWorkflowWidget } from './code-review-workflow/review-workflow-widget';
 import { TeamDashboardWidget } from './team-dashboard/team-dashboard-widget';
+import { SkillsExplorerWidget } from './skills-explorer/skills-explorer-widget';
 
 import '../../src/browser/style/code-review.css';
 import '../../src/browser/style/test-generation.css';
@@ -33,6 +34,7 @@ import '../../src/browser/style/code-comments.css';
 import '../../src/browser/style/collaboration.css';
 import '../../src/browser/style/review-workflow.css';
 import '../../src/browser/style/team-dashboard.css';
+import '../../src/browser/style/skills-explorer.css';
 
 /**
  * Frontend module for OpenClaude integration
@@ -117,5 +119,12 @@ export default new ContainerModule(bind => {
     bind(WidgetFactory).toDynamicValue(ctx => ({
         id: TeamDashboardWidget.ID,
         createWidget: () => ctx.container.get<TeamDashboardWidget>(TeamDashboardWidget)
+    })).inSingletonScope();
+
+    // Register Skills Explorer Widget
+    bind(SkillsExplorerWidget).toSelf();
+    bind(WidgetFactory).toDynamicValue(ctx => ({
+        id: SkillsExplorerWidget.ID,
+        createWidget: () => ctx.container.get<SkillsExplorerWidget>(SkillsExplorerWidget)
     })).inSingletonScope();
 });

@@ -7,6 +7,7 @@
 
 import { ContainerModule } from '@theia/core/shared/inversify';
 import { ConnectionHandler, JsonRpcConnectionHandler } from '@theia/core';
+import { BackendApplicationContribution } from '@theia/core/lib/node';
 import { OpenClaudeBackendService, OPENCLAUDE_BACKEND_PATH } from '../common/openclaude-protocol';
 import { OpenClaudeBackendClient } from './openclaude-backend-client';
 import { SkillLoaderService } from './skill-loader-service';
@@ -20,8 +21,9 @@ import { SkillLoaderService } from './skill-loader-service';
  * - Exposes it via JSON-RPC for frontend access
  */
 export default new ContainerModule(bind => {
-    // Bind the Skill Loader service
+    // Bind the Skill Loader service (eager startup via BackendApplicationContribution)
     bind(SkillLoaderService).toSelf().inSingletonScope();
+    bind(BackendApplicationContribution).toService(SkillLoaderService);
 
     // Bind the backend service implementation
     bind(OpenClaudeBackendService).to(OpenClaudeBackendClient).inSingletonScope();

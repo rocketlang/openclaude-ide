@@ -25,6 +25,7 @@ import { CursorDecoratorProvider } from './collaboration/cursor-decorator-provid
 import { ReviewWorkflowWidget } from './code-review-workflow/review-workflow-widget';
 import { CreateReviewDialog } from './code-review-workflow/create-review-dialog';
 import { TeamDashboardWidget } from './team-dashboard/team-dashboard-widget';
+import { SkillsExplorerWidget } from './skills-explorer/skills-explorer-widget';
 
 /**
  * OpenClaude commands
@@ -133,6 +134,11 @@ export namespace OpenClaudeCommands {
     export const RELOAD_SKILLS: Command = {
         id: 'openclaude.reloadSkills',
         label: 'OpenClaude: Reload Skills'
+    };
+
+    export const SHOW_SKILLS_EXPLORER: Command = {
+        id: 'openclaude.showSkillsExplorer',
+        label: 'OpenClaude: Show Skills Explorer'
     };
 }
 
@@ -556,6 +562,14 @@ export class OpenClaudeFrontendContribution implements CommandContribution {
                 } catch (error) {
                     this.messageService.error(`Failed to reload skills: ${error}`);
                 }
+            }
+        });
+
+        // Show skills explorer command
+        commands.registerCommand(OpenClaudeCommands.SHOW_SKILLS_EXPLORER, {
+            execute: async () => {
+                const widget = await this.widgetManager.getOrCreateWidget<SkillsExplorerWidget>(SkillsExplorerWidget.ID);
+                widget.activate();
             }
         });
     }

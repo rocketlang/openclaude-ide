@@ -1,0 +1,126 @@
+.openclaude-skills-explorer {
+    padding: 12px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.openclaude-skills-explorer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.openclaude-skills-explorer-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--theia-editor-foreground);
+}
+
+.openclaude-skills-explorer-reload {
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.openclaude-skills-explorer-loading {
+    padding: 20px 0;
+    color: var(--theia-descriptionForeground);
+    font-style: italic;
+}
+
+.openclaude-skills-explorer-error {
+    padding: 8px 12px;
+    background: var(--theia-inputValidation-errorBackground);
+    border: 1px solid var(--theia-inputValidation-errorBorder);
+    color: var(--theia-errorForeground);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.openclaude-skills-explorer-empty {
+    padding: 20px 0;
+    color: var(--theia-descriptionForeground);
+    text-align: center;
+}
+
+.openclaude-skills-explorer-empty p {
+    margin: 4px 0;
+}
+
+.openclaude-skills-explorer-hint {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.openclaude-skills-explorer-hint code {
+    background: var(--theia-textCodeBlock-background);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.openclaude-skills-explorer-count {
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    margin-bottom: 8px;
+}
+
+.openclaude-skills-explorer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.openclaude-skills-explorer-card {
+    background: var(--theia-editor-background);
+    border: 1px solid var(--theia-widget-border);
+    border-radius: 4px;
+    padding: 10px 12px;
+}
+
+.openclaude-skills-explorer-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.openclaude-skills-explorer-card-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--theia-editor-foreground);
+}
+
+.openclaude-skills-explorer-card-scope {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.openclaude-scope-project {
+    background: var(--theia-badge-background);
+    color: var(--theia-badge-foreground);
+}
+
+.openclaude-scope-global {
+    background: var(--theia-statusBar-background);
+    color: var(--theia-statusBar-foreground);
+}
+
+.openclaude-skills-explorer-card-description {
+    font-size: 12px;
+    color: var(--theia-descriptionForeground);
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.openclaude-skills-explorer-card-path {
+    font-size: 11px;
+    color: var(--theia-textLink-foreground);
+    font-family: var(--theia-code-font-family);
+    word-break: break-all;
+    opacity: 0.7;
+}
