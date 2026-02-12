@@ -1,5 +1,6 @@
 {
   "name": "@theia/ai-codex",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - OpenAI Codex Integration",
   "dependencies": {

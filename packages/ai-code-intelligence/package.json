@@ -1,5 +1,6 @@
 {
   "name": "@theia/ai-code-intelligence",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - AI Code Intelligence Integration",
   "publishConfig": {

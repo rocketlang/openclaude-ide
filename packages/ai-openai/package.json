@@ -1,5 +1,6 @@
 {
   "name": "@theia/ai-openai",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - OpenAI Integration",
   "dependencies": {

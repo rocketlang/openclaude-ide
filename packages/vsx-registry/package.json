@@ -1,5 +1,6 @@
 {
   "name": "@theia/vsx-registry",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - VSX Registry",
   "dependencies": {

@@ -1,5 +1,6 @@
 {
   "name": "@theia/ai-swarm",
+  "type": "module",
   "version": "1.67.0",
   "description": "Multi-agent swarm orchestration for Theia AI - enables lead agent to coordinate specialized sub-agents",
   "license": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",

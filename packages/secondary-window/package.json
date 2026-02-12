@@ -1,5 +1,6 @@
 {
   "name": "@theia/secondary-window",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - Secondary Window Extension",
   "dependencies": {

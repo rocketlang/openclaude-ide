@@ -1,0 +1,55 @@
+{
+  "name": "@theia/ai-code-review",
+  "version": "1.67.0",
+  "description": "AI-powered code review with severity levels for Theia IDE",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "(EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/theia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eclipse-theia/theia/issues"
+  },
+  "homepage": "https://github.com/eclipse-theia/theia",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/ai-code-review-frontend-module",
+      "backend": "lib/node/ai-code-review-backend-module"
+    }
+  ],
+  "keywords": [
+    "theia-extension",
+    "ai",
+    "code-review",
+    "static-analysis",
+    "linting"
+  ],
+  "dependencies": {
+    "@theia/core": "1.67.0",
+    "@theia/editor": "1.67.0",
+    "@theia/monaco": "1.67.0",
+    "@theia/monaco-editor-core": "1.67.0",
+    "@theia/workspace": "1.67.0",
+    "@theia/filesystem": "1.67.0",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "typescript": "~5.4.5"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rimraf lib",
+    "compile": "tsc -b",
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "watch": "tsc -w"
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "extends": "../../configs/base.tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "lib"
+    },
+    "include": [
+        "src"
+    ],
+    "references": [
+        { "path": "../core" },
+        { "path": "../editor" },
+        { "path": "../monaco" },
+        { "path": "../ai-core" }
+    ]
+}

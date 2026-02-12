@@ -1,5 +1,6 @@
 {
   "name": "@theia/search-in-workspace",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - Search in workspace",
   "dependencies": {

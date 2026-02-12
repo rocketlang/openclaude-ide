@@ -1,5 +1,6 @@
 {
   "name": "@theia/ai-provider-manager",
+  "type": "module",
   "version": "1.67.0",
   "description": "Theia - AI Provider Manager for BYOK and Model Routing",
   "dependencies": {

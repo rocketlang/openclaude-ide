@@ -1,5 +1,6 @@
 {
   "name": "@theia/ai-code-review",
+  "type": "module",
   "version": "1.67.0",
   "description": "AI-powered code review with severity levels for Theia IDE",
   "publishConfig": {

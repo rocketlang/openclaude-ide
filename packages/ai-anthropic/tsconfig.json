@@ -3,7 +3,10 @@
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2022"
   },
   "include": [
     "src"

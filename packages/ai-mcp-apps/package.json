@@ -1,5 +1,6 @@
 {
     "name": "@theia/ai-mcp-apps",
+  "type": "module",
     "version": "1.67.0",
     "description": "MCP Apps UI Framework - Interactive widgets in chat",
     "license": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",

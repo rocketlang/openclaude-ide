@@ -1,5 +1,6 @@
 {
   "name": "@ankr/openclaude",
+  "type": "module",
   "version": "1.0.0",
   "description": "OpenClaude AI-powered features integration for Theia IDE - Part of ANKR Universe",
   "license": "MIT",

@@ -1,0 +1,50 @@
+{
+  "name": "@theia/ai-search",
+  "version": "1.67.0",
+  "description": "AI-powered natural language file search for Theia IDE",
+  "keywords": [
+    "theia",
+    "ai",
+    "search",
+    "semantic",
+    "natural-language"
+  ],
+  "license": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/theia.git"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/common/index.js",
+  "typings": "lib/common/index.d.ts",
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/ai-search-frontend-module",
+      "backend": "lib/node/ai-search-backend-module"
+    }
+  ],
+  "dependencies": {
+    "@theia/core": "1.67.0",
+    "@theia/file-search": "1.67.0",
+    "@theia/search-in-workspace": "1.67.0",
+    "@theia/workspace": "1.67.0",
+    "@theia/editor": "1.67.0",
+    "@theia/ai-core": "1.67.0",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "typescript": "~5.4.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf lib"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
